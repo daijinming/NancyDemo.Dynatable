@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>DataGrid Pagination - jQuery EasyUI Demo</title>
+    <link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/Dynatable/0.3.1/jquery.dynatable.min.css">
+    <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/bootstrap-2.3.2.min.css" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.bootcss.com/Dynatable/0.3.1/jquery.dynatable.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('#my-ajax-table').dynatable({
+                features: {
+                    paginate: true,
+                    search: true,
+                    recordCount: true,
+                    perPageSelect: true
+                },
+                dataset: {
+                    ajax: true,
+                    ajaxUrl: '/pagelist',
+                    ajaxOnLoad: true,
+                    ajaxMethod: 'POST',
+                    ajaxDataType: 'json',
+                    records: []
+                }
+            });
+        });
+
+        
+
+    </script>
+</head>
+<body>
+    <table id="my-ajax-table" class="table table-bordered">
+        <thead>
+        <th>Code</th>
+        <th>FullName</th>
+        <th>SortCode</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>
